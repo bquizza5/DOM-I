@@ -128,3 +128,14 @@ for (i = 0; i < nav_items.length; i++){
   nav_items[i].style.color = 'green';
 }
 
+
+
+//stretch
+
+cta_button.addEventListener('click', function(){
+  h1.textContent = 'You clicked!'
+});
+
+cta_button.addEventListener('dblclick', function(){
+  h1.textContent = siteContent['cta']['h1']
+});
