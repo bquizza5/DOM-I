@@ -44,14 +44,20 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 
 //Navigation
-const nav_items = document.querySelectorAll('nav a');
+let nav_items = document.querySelectorAll('nav a');
+// console.log(nav_items.length)
 
-nav_items[0].textContent = siteContent['nav']['nav-item-1']
-nav_items[1].textContent = siteContent['nav']['nav-item-2']
-nav_items[2].textContent = siteContent['nav']['nav-item-3']
-nav_items[3].textContent = siteContent['nav']['nav-item-4']
-nav_items[4].textContent = siteContent['nav']['nav-item-5']
-nav_items[5].textContent = siteContent['nav']['nav-item-6']
+for (i = 0; i < nav_items.length; i++){
+  nav_items[i].textContent = siteContent['nav'][`nav-item-${i+1}`]
+}
+
+// nav_items[0].textContent = siteContent['nav']['nav-item-1']
+// nav_items[1].textContent = siteContent['nav']['nav-item-2']
+// nav_items[2].textContent = siteContent['nav']['nav-item-3']
+// nav_items[3].textContent = siteContent['nav']['nav-item-4']
+// nav_items[4].textContent = siteContent['nav']['nav-item-5']
+// nav_items[5].textContent = siteContent['nav']['nav-item-6']
+
 
 //Call to Action
 
@@ -97,4 +103,28 @@ ps[7].textContent = siteContent['contact']['email']
 //footer
 
 ps[8].textContent = siteContent['footer']['copyright']
+
+
+
+//add 2 new items to the navigation
+
+const test1 = document.createElement('a')
+test1.textContent = 'test1'
+
+document.querySelector('nav').appendChild(test1)
+
+const test2 = document.createElement('a')
+test2.textContent = 'test2'
+
+document.querySelector('nav').prepend(test2)
+
+
+//select all nav items (including new ones)
+nav_items = document.querySelectorAll('nav a');
+
+
+//turn all nav items green
+for (i = 0; i < nav_items.length; i++){
+  nav_items[i].style.color = 'green';
+}
 
