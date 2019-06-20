@@ -40,3 +40,102 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+
+
+//Navigation
+let nav_items = document.querySelectorAll('nav a');
+// console.log(nav_items.length)
+
+for (i = 0; i < nav_items.length; i++){
+  nav_items[i].textContent = siteContent['nav'][`nav-item-${i+1}`]
+}
+
+// nav_items[0].textContent = siteContent['nav']['nav-item-1']
+// nav_items[1].textContent = siteContent['nav']['nav-item-2']
+// nav_items[2].textContent = siteContent['nav']['nav-item-3']
+// nav_items[3].textContent = siteContent['nav']['nav-item-4']
+// nav_items[4].textContent = siteContent['nav']['nav-item-5']
+// nav_items[5].textContent = siteContent['nav']['nav-item-6']
+
+
+//Call to Action
+
+const h1 = document.querySelector('h1')
+h1.textContent = siteContent['cta']['h1']
+
+const cta_button = document.querySelector('button')
+cta_button.textContent = siteContent['cta']['button']
+
+const cta_img = document.querySelector('#cta-img')
+cta_img.src = siteContent['cta']['img-src']
+
+//main content
+
+const h4s = document.querySelectorAll('h4')
+
+h4s[0].textContent = siteContent['main-content']['features-h4']
+h4s[1].textContent = siteContent['main-content']['about-h4']
+h4s[2].textContent = siteContent['main-content']['services-h4']
+h4s[3].textContent = siteContent['main-content']['product-h4']
+h4s[4].textContent = siteContent['main-content']['vision-h4']
+
+const ps = document.querySelectorAll('p')
+
+// console.log(ps)
+ps[0].textContent = siteContent['main-content']['features-content']
+ps[1].textContent = siteContent['main-content']['about-content']
+ps[2].textContent = siteContent['main-content']['services-content']
+ps[3].textContent = siteContent['main-content']['product-content']
+ps[4].textContent = siteContent['main-content']['vision-content']
+
+const middle_img = document.querySelector('.middle-img')
+middle_img.src = siteContent['main-content']['middle-img-src']
+
+//contact
+
+h4s[5].textContent = siteContent['contact']['contact-h4']
+
+ps[5].textContent = siteContent['contact']['address']
+ps[6].textContent = siteContent['contact']['phone']
+ps[7].textContent = siteContent['contact']['email']
+
+//footer
+
+ps[8].textContent = siteContent['footer']['copyright']
+
+
+
+//add 2 new items to the navigation
+
+const test1 = document.createElement('a')
+test1.textContent = 'test1'
+
+document.querySelector('nav').appendChild(test1)
+
+const test2 = document.createElement('a')
+test2.textContent = 'test2'
+
+document.querySelector('nav').prepend(test2)
+
+
+//select all nav items (including new ones)
+nav_items = document.querySelectorAll('nav a');
+
+
+//turn all nav items green
+for (i = 0; i < nav_items.length; i++){
+  nav_items[i].style.color = 'green';
+}
+
+
+
+//stretch
+
+cta_button.addEventListener('click', function(){
+  h1.textContent = 'You clicked!'
+});
+
+cta_button.addEventListener('dblclick', function(){
+  h1.textContent = siteContent['cta']['h1']
+});
